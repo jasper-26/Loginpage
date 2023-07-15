@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Login</h1>
+
+@if (!string.IsNullOrEmpty(ViewBag.Status))
+{
+    <p>@ViewBag.Status</p>
+}
+<form method="post" action="@Url.Action("LoginUser", "Login")" enctype="application/x-www-form-urlencoded">
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="Username" required />
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="Password" required />
+    </div>
+    <div>
+        <button type="submit">Login</button>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Signup">Signup</a>
+    </div>
+</form>
